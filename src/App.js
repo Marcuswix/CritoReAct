@@ -1,11 +1,17 @@
 import './App.css';
-import Header from './components/Header';
-import OurServices from './components/OurServices';
+import SectionOurServices from './components/SectionOurServices/OurServices';
+import SectionAboutCompany from './components/SectionAboutCompany/AboutCompany';
+import SectionFeatures from './components/SectionFeatures/Features'
+import SectionWhyChooseUs from './components/SectionWhyChooseUs/WhyChooseUs'
 
 function App() {
   return (
     <>
-     <OurServices />
+
+      <SectionAboutCompany />
+      <SectionOurServices />
+      <SectionFeatures />
+      <SectionWhyChooseUs />
     </>
   );
 }
