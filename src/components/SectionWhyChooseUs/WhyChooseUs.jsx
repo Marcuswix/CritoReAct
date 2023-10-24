@@ -5,16 +5,16 @@ import Articles from '../SectionFeatures/Articles'
 const WhyChooseUs = () => {
   return (
     <>
-    <section class="section-why-us">
+    <section className="section-why-us">
     
 
-      <div class="container">
+      <div className="container">
 
           <SectionTitle title="Why Choose Us" headline="Why We Are The Best Business Consulting Agency" />
       
 {/* Box-1 */}
-          <div class="content">
-            <div class="svg">
+          <div className="content">
+            <div className="svg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
                 <g id="Group_1000004862" data-name="Group 1000004862" transform="translate(-300 -4085)">
                 <g id="Ellipse_9" data-name="Ellipse 9" transform="translate(300 4085)" fill="#fff" stroke="rgba(25,25,25,0.1)" stroke-width="1">
@@ -32,14 +32,14 @@ const WhyChooseUs = () => {
                 </g>
                 </svg>
             </div>              
-            <div class="text">
+            <div className="text">
               <Articles  headline="Process Excellence" />
             </div>
           </div>
 
 {/* Box-2 */}            
-          <div class="content">
-            <div class="svg">
+          <div className="content">
+            <div className="svg">
               <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
                          <g id="Group_1000004871" data-name="Group 1000004871" transform="translate(-300 -4190)">
                          <g id="Ellipse_9" data-name="Ellipse 9" transform="translate(300 4190)" fill="#fff" stroke="rgba(25,25,25,0.1)" stroke-width="1">
@@ -55,16 +55,16 @@ const WhyChooseUs = () => {
                          </g>
               </svg>
             </div>
-            <div class="text">
+            <div className="text">
               <Articles headline="Strategic Planning" />
             </div>
           </div>
     
 
-          <div class="content">
+          <div className="content">
 
 {/* Box-3 */}   
-          <div class="svg">
+          <div className="svg">
               <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
                       <g id="Group_1000004870" data-name="Group 1000004870" transform="translate(-300 -4295)">
                       <g id="Ellipse_9" data-name="Ellipse 9" transform="translate(300 4295)" fill="#fff" stroke="rgba(25,25,25,0.1)" stroke-width="1">
@@ -81,14 +81,14 @@ const WhyChooseUs = () => {
                         </g>
               </svg>
           </div>       
-            <div class="text">
+            <div className="text">
               <Articles headline="Experience Design" />
             </div>
           </div>
       
 {/* Box-4 */}   
-          <div class="content"> 
-            <div class="svg">
+          <div className="content"> 
+            <div className="svg">
               <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
               <g id="Group_1000004869" data-name="Group 1000004869" transform="translate(-300 -4400)">
               <g id="Ellipse_9" data-name="Ellipse 9" transform="translate(300 4400)" fill="#fff" stroke="rgba(25,25,25,0.1)" stroke-width="1">
@@ -106,7 +106,7 @@ const WhyChooseUs = () => {
               </g>
               </svg>
             </div>
-            <div class="text">              
+            <div className="text">              
               <Articles headline="Artificial Inteligence" />
             </div>
           </div>
@@ -115,8 +115,8 @@ const WhyChooseUs = () => {
 
 {/* Not on mobil-version */}
 
-        <div class="rectangel">
-            <div class="image">
+        <div className="rectangel">
+            <div className="image">
               <img src="images/Image-two-women.png" alt="Two women talking to each other beside a table. One is holding a tablet." />
             </div>
         </div>
