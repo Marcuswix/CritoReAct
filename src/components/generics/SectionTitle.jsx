@@ -4,8 +4,8 @@ const SectionTitle = ({title, headline}) => {
   return (
     <>
         <div>
-        <h4>{title}</h4>
-        <h1>{headline}</h1>
+        <h4 className='pageTitle'>{title}</h4>
+        <h1 className="sectionsHeadlines">{headline}</h1>
         </div>
     </>
   )

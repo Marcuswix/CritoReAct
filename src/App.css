@@ -9,7 +9,7 @@ html, body
 
 @media (min-width: 300px) 
 {
-    h1 {
+    .sectionHeadlines {
       text-align: center;
       font-size: 1.8rem;
       line-height: 2.5rem;
@@ -23,7 +23,7 @@ html, body
         font-size: 1.2rem;
       }
 
-    h4 {
+    .pageTitle {
         text-align: center;
         font-size: 0.9rem;
         margin-bottom: 1rem;
@@ -33,18 +33,24 @@ html, body
     p {
         font-size: 0.8rem;
       }
+
+      #mainHeadline
+      {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
   }
 
 @media (min-width: 768px) 
 {
   h1 {
-    text-align: center;
+    text-align: left;
     font-size: 2rem;
     line-height: 2.5rem;
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 2rem;
   }
@@ -53,6 +59,10 @@ html, body
     font-size: 1.05rem;
     font-weight: 200;
   
+  }
+
+  .pageTitle {
+    text-align: left;
   }
 
   p {
@@ -222,6 +232,7 @@ html, body
 }
 
 #overlay {
+  display: none;
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.2588235294);
@@ -234,6 +245,7 @@ html, body
 #overlay.show {
   opacity: 1;
   pointer-events: all;
+  display: none;
 }
 
 /* Header */
@@ -458,7 +470,7 @@ html, body
     background-color: #F0EFE9;
     padding: 2rem;
     position: relative;
-    z-index: -1;
+    z-index: 0;
   }
 
   #imgElementShowcase
@@ -609,6 +621,7 @@ html, body
 .section-features .wrapper-grid .my-container .content {
   width: 28rem;
   padding-block: 3rem;
+  border: none;
 }
 @media (max-width: 1600px) {
   .section-features .wrapper-grid .my-container .content {
@@ -666,6 +679,13 @@ html, body
 .section-features .wrapper-grid .advices article {
   width: 320px;
   padding-block: 1rem;
+  h3{
+    font-size: 1rem;
+  }
+}
+
+.section-features .wrapper-grid .advices article h3{
+    font-size: 1.2rem;
 }
 @media (max-width: 768px) {
   .section-features .wrapper-grid .advices article {
@@ -962,7 +982,7 @@ html, body
   color: #191919;
   background-color: #fffefe;
   width: 18rem;
-  height: 18rem;
+  height: 20rem;
   padding: 1.5rem;
   margin-bottom: 1rem;
   transition: background-color ease-in-out 100ms;
@@ -978,7 +998,7 @@ html, body
   border-color: #191919;
   border-width: 0.2rem;
   width: 25%;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .service-box .circlearrow {
@@ -1124,6 +1144,7 @@ html, body
 .section-project-and-case .container .project-and-cases article h3 {
   border-bottom: 2px solid rgba(0, 0, 0, 0.201);
   padding-bottom: 10px;
+  font-size: 1.2rem;
 }
 .section-project-and-case .container .project-and-cases article a {
   margin-right: 10px;
@@ -1255,7 +1276,12 @@ html, body
   }
 }
 .section-our-team .slider .text-container {
-  padding-top: 1.8rem;
+  padding-top: 1.6rem;
+}
+
+.section-our-team .slider .text-container .OurTeamName {
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 .section-our-team .slider .text-container p {
   margin-top: -0.6rem;
@@ -1289,14 +1315,13 @@ html, body
     display: block;
     padding-block: 2rem;
     padding-inline: 1rem;
-    text-align: center;
   }
 }
 .section-testimonial .white-background {
   background-color: #FFFFFF;
-  text-align: center;
   padding-top: 6rem;
 }
+
 @media (max-width: 1400px) {
   .section-testimonial .white-background {
     inset: 0;
@@ -1421,50 +1446,24 @@ html, body
   }
 }
 
-.section.section-article {
-  padding-inline: 18rem;
-  padding-top: 12rem;
-  padding-bottom: 6rem;
+.TestimonialName
+{
+  font-size: 1.2rem;
+  text-align: left;
+  margin-bottom: 0.2rem;
 }
-@media (max-width: 1400px) {
-  .section.section-article {
-    padding: 4rem;
-  }
-}
-@media (max-width: 998px) {
+
+/* Section News And aricles */
+
+@media (min-width: 300px)
+{
   .section.section-article {
     padding: 1rem;
-    padding-block: 2rem;
-    display: grid;
-    align-items: center;
-    justify-items: center;
+    background-color:#F0EFE9;
   }
 }
-.section.section-article .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  padding-bottom: 1rem;
-}
-@media (max-width: 998px) {
-  .section.section-article .header button {
-    text-align: center;
-    margin-top: 1rem;
-    width: 90%;
-  }
-}
-@media (max-width: 998px) {
-  .section.section-article .header {
-    display: block;
-    text-align: center;
-    width: 25rem;
-  }
-}
-@media (max-width: 768px) {
-  .section.section-article .header {
-    width: 90%;
-  }
-}
+
+
 .section.section-article a {
   color: #191919;
   text-decoration: none;
@@ -1489,37 +1488,12 @@ html, body
 .section.section-article .slider .articels {
   padding-top: 2rem;
 }
-.section.section-article .slider .articels .image-and-date {
-  position: relative;
-  text-align: center;
-  padding-bottom: 1rem;
-}
-@media (max-width: 768px) {
-  .section.section-article .slider .articels .image-and-date {
-    inset: 0;
-    padding-top: 2rem;
-  }
-}
+
 .section.section-article .slider .articels .image {
   width: 100%;
   height: auto;
 }
-.section.section-article .date {
-  position: absolute;
-  text-align: center;
-  padding: 1rem;
-  top: 7%;
-  left: 4%;
-  width: 3.4rem;
-  height: 4rem;
-  background-color: #F9D783;
-}
-.section.section-article .date .number {
-  margin-top: -0.5rem;
-}
-.section.section-article .date .month {
-  margin-top: -1.45rem;
-}
+
 .section.section-article .slider-mobilversion {
   width: 90%;
   border: solid 1px #F0EFE9;
@@ -1530,7 +1504,7 @@ html, body
     display: none;
   }
 }
-.section.section-article .slider-mobilversion .carousel-control-prev {
+.section.ionsection-article .slider-mobilversion .carousel-control-prev {
   background-color: rgba(0, 0, 0, 0.6901960784);
   color: #dad9d3;
   height: 50px;
@@ -1612,6 +1586,7 @@ html, body
 @media (max-width: 768px) {
   .section-get-news .my-container {
     flex-direction: column;
+    text-align: center;
   }
 }
 .section-get-news .my-container .buttons {
@@ -2040,60 +2015,22 @@ html, body
     display: none;
   }
 }
-.wrapper-grid-news .content a {
-  color: #191919;
-  text-decoration: none;
-}
-.wrapper-grid-news .content a :hover {
-  color: #868686;
-  -webkit-text-decoration: underline solid 1px #868686;
-          text-decoration: underline solid 1px #868686;
-}
-.wrapper-grid-news .content a :active {
-  color: #DAD9D3;
-  -webkit-text-decoration: underline solid 1px #DAD9D3;
-          text-decoration: underline solid 1px #DAD9D3;
-}
+
 @media (max-width: 768px) {
   .wrapper-grid-news .content {
     border: solid 1px #DAD9D3;
     border-radius: 1rem;
     padding: 1rem;
+    margin-top: 1rem;
   }
 }
-.wrapper-grid-news .content .image-article {
-  width: 413px;
-}
-.wrapper-grid-news .content .picture-and-date {
-  position: relative;
-}
-@media (max-width: 768px) {
-  .wrapper-grid-news .content .picture-and-date .image-article {
-    width: 100%;
-  }
-}
-.wrapper-grid-news .content .picture-and-date .date {
-  width: 56px;
-  height: 64px;
-  background-color: #F9D783;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  text-align: center;
-}
-.wrapper-grid-news .content .picture-and-date .date .date-number {
-  width: auto;
-  margin-bottom: -15px;
-  margin-top: 5px;
-  padding: none;
-}
-.wrapper-grid-news .content .p-headline {
-  padding-top: 2rem;
-}
-.wrapper-grid-news .content h3 {
-  width: 250px;
-  line-height: 32px;
-}
+
+
+
+
+
+
+
 @media (min-width: 768px) {
   .wrapper-grid-news .slider {
     display: none;
@@ -2385,13 +2322,12 @@ html, body
   line-height: 35px;
 }
 
-.section.section-article.article {
-  background-color: #F0EFE9;
+/* Section - News And Articles */
+.section.section-article {
+  background-color: #ffffff;
   padding-top: 3rem;
 }
-.section.section-article.article .btn-transparent.white {
-  background-color: #FFFFFF;
-}
+
 .section.section-article.article .slider {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -2501,4 +2437,9 @@ html, body
 {
   display: block;
   margin: auto;
+}
+
+.diver
+{
+  background-color: #F0EFE9;
 }
