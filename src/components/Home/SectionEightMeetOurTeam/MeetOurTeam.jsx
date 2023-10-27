@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionTitle from '../../generics/SectionTitle';
-import BtnYellow from '../../generics/BtnYellow';
+import BtnTransparent from '../../generics/BtnTransparent';
 import img_Palmer from '../../../assets/images/Palmer.png'
 import img_Arubi from '../../../assets/images/Aubri.png';
 import img_Hansen from '../../../assets/images/Hansen.png';
@@ -26,7 +26,7 @@ const MeetOurTeam = () => {
           <SectionTitle title="Meet Our Team" headline="Experience Team Members" />
         </div>
         <div>
-          <BtnYellow title="Meet-our-team" url="BrowseTeam.html" />
+          <BtnTransparent title="Meet-our-team" linkTo="#" />
         </div>
       </div>
 

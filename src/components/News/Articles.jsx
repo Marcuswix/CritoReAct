@@ -4,15 +4,15 @@ import '../css/NewsAndArticles/style.css'
 const Articles = ({month, date, subject, headline, img, url}) => {
   return (
     <>
-    <article class="content">
-        <div class="picture-and-date">
-            <div class="date">
-                <h3 class="date-number">{date}</h3>
+    <article className="content">
+        <div className="picture-and-date">
+            <div className="date">
+                <h3 className="date-number">{date}</h3>
                 <p>{month}</p>
             </div>
-            <img class="image-article" src={img} />
+            <img className="image-article" src={img} />
         </div>
-            <p class="p-headline">{subject}</p>
+            <p className="p-headline">{subject}</p>
             <a href={url}><h3>{headline}</h3></a>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero.</p>        
     </article>

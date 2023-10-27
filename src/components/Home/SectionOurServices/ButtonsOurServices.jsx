@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const ButtonsOurServices = () => {
+const ButtonsOurServices = ({linkTo}) => {
   return (
     <div className="circlearrow">
     <button className="btn-round" title="Read-more-business">
-    <a href="index.html">
+    <Link to={linkTo}>
       <svg className="arrow-in-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.517 35.517">
       <g id="Arrow_right_up" data-name="Arrow right up" transform="translate(7.51 -20.49) rotate(30)">
       <path id="Vector" d="M0,0H26V26H0Z" transform="translate(15 15)" fill="none"/>
@@ -14,7 +15,7 @@ const ButtonsOurServices = () => {
       </g>
       </g>
       </svg>
-    </a>
+    </Link>
     </button>
   </div>
   )

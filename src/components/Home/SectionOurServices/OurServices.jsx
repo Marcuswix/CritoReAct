@@ -13,18 +13,18 @@ const OurServices = () => {
   </div>
 
   <div className="wrapper-grid">
-    <div className="container">
+    <div className="containerHeadlineOurServices">
       <SectionTitle title="Our services" headline="We provide The Best Business Counsulting Services" />
     </div>
 
-    <div class="grid-container">
-      <ServiceBox title="Business Advice" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." url="" />
-      <ServiceBox title="Startup Business" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." url="" />
-      <ServiceBox title="Financial Advice" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." url=""/>
-      <ServiceBox title="Risk Management" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." url=""/>
+    <div className="grid-container">
+      <ServiceBox title="Business Advice" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." linkTo="/Services" />
+      <ServiceBox title="Startup Business" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." linkTo="/Services" />
+      <ServiceBox title="Financial Advice" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." linkTo="/Services" />
+      <ServiceBox title="Risk Management" description="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus." linkTo="/Services" />
     </div>
     <div className="end">
-      <BtnTransparent title="Browes Services" url="index.html" />
+      <BtnTransparent title="Browes Services" linkTo="/Services" />
     </div>
   </div>
 </section>

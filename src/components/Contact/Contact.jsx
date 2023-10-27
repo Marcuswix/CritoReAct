@@ -29,7 +29,7 @@ const Contact = () => {
             <path id="Vector" d="M16.008,12.49a8.519,8.519,0,0,1-.91,1.37c-.035.044-.071.087-.108.13h0L14.981,14H15L9.956,19.355a2,2,0,0,1-2.911,0L2,14h.019l-.009-.01L2,13.977A8.5,8.5,0,1,1,16.007,12.49Zm-5.384-1.618A3,3,0,1,0,8.5,11.75,3,3,0,0,0,10.623,10.871Z" transform="translate(3.5 2)" fill="#fff"/>
             </g></g></g></svg>} />
 
-      <Info title="Call us" info_one="+46 (8) 121 470 50" info_two="+46 (8) 121 470 51" svg={            <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+      <Info title="Call us" info_one="+46 (8) 121 470 50" info_two="+46 (8) 121 470 51" svg={<svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <g id="Icon" transform="translate(-810 -588)">
             <circle id="Ellipse_10" data-name="Ellipse 10" cx="30" cy="30" r="30" transform="translate(810 588)" fill="#191919"/>
             <g id="ic:round-call" transform="translate(828 606)">
@@ -54,12 +54,12 @@ const Contact = () => {
             <div className="textbox">
               <h1>Leave us a message<br />for any information.</h1>
             </div>
-            <form className="forms" method="post" actions="#" id="Contact-form" title="Contact-form" autocomplete="on">
+            <form className="forms" method="post" actions="#" id="Contact-form" title="Contact-form" autoComplete="on">
               <input className="input" tabIndex="1" type="text" id="name" name="name" title="Name" placeholder="Name*" />
               <input className="input" tabIndex="2" type="email" id="email" name="email" title="Email" placeholder="Email*" />
               <textarea className="input" tabIndex="3" type="textarea" id="message" title="Your meassage" name="message" placeholder="Your Message*">
               </textarea>
-              <button className="btn-yellow" tabIndex="4" type="submit" title="Send" onclick="alert">Send
+              <button className="btn-yellow" tabIndex="4" type="submit" title="Send">Send
               <svg className="arrow bi bi-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
               <path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
               </svg>   
@@ -71,9 +71,9 @@ const Contact = () => {
 
 
 <section className="map">
-  <iframe className="big-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15218.90215123078!2d18.06346706264281!3d59.3332896355906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694702183755!5m2!1ssv!2sse" width="400" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <iframe className="medium-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21940.039959008154!2d18.02775163404334!3d59.33507764623113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694761329003!5m2!1ssv!2sse" width="400" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <iframe className="small-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7793860707923!2d18.062010500000003!3d59.336636999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1695979804848!5m2!1ssv!2sse" width="260" height="260" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe className="big-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15218.90215123078!2d18.06346706264281!3d59.3332896355906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694702183755!5m2!1ssv!2sse" width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+  <iframe className="medium-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21940.039959008154!2d18.02775163404334!3d59.33507764623113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694761329003!5m2!1ssv!2sse" width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+  <iframe className="small-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7793860707923!2d18.062010500000003!3d59.336636999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1695979804848!5m2!1ssv!2sse" width="260" height="260" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
     </>

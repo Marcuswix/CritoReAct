@@ -15,7 +15,7 @@ const NewsAndArticles = () => {
     <div className="headerArticleNews">
     <SectionTitle title="Article & News" headline="Get Every Single Articles & News" />
       <div className="button">
-        <BtnTransparent title="Browse Articles" url="" />
+        <BtnTransparent title="Browse Articles" linkTo="/News" />
       </div>
     </div>
 

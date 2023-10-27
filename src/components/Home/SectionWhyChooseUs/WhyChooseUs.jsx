@@ -1,13 +1,13 @@
 import React from 'react'
 import SectionTitle from '../../generics/SectionTitle'
 import Articles from '../SectionFeatures/Articles'
+import img from '../../../assets/images/Image-two-women.png'
 
 const WhyChooseUs = () => {
   return (
     <>
     <section className="section-why-us">
     
-
       <div className="container">
 
           <SectionTitle title="Why Choose Us" headline="Why We Are The Best Business Consulting Agency" />
@@ -60,11 +60,9 @@ const WhyChooseUs = () => {
             </div>
           </div>
     
-
-          <div className="content">
-
 {/* Box-3 */}   
-          <div className="svg">
+          <div className="content">
+            <div className="svg">
               <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
                       <g id="Group_1000004870" data-name="Group 1000004870" transform="translate(-300 -4295)">
                       <g id="Ellipse_9" data-name="Ellipse 9" transform="translate(300 4295)" fill="#fff" stroke="rgba(25,25,25,0.1)" strokeWidth="1">
@@ -80,7 +78,7 @@ const WhyChooseUs = () => {
                         </g>
                         </g>
               </svg>
-          </div>       
+            </div>       
             <div className="text">
               <Articles headline="Experience Design" />
             </div>
@@ -110,14 +108,12 @@ const WhyChooseUs = () => {
               <Articles headline="Artificial Inteligence" />
             </div>
           </div>
-
       </div>
 
 {/* Not on mobil-version */}
-
         <div className="rectangel">
             <div className="image">
-              <img src="images/Image-two-women.png" alt="Two women talking to each other beside a table. One is holding a tablet." />
+              <img src={img} alt="Two women talking to each other beside a table. One is holding a tablet." />
             </div>
         </div>
     </section>

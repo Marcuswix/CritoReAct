@@ -26,6 +26,7 @@ html, body
     .pageTitle {
         text-align: center;
         font-size: 0.9rem;
+        font-family: "DM Sans";
         margin-bottom: 1rem;
         color: #F94D1C;
       }
@@ -90,7 +91,7 @@ html, body
   background-color: #F9D783;
   border-color: #F9D783;
   border-style: none;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   min-width: 12rem;
   max-width: 14rem;
   border-radius: 2rem;
@@ -115,44 +116,14 @@ html, body
   border: #191919;
 }
 
-.btn-transparent {
-  background-color: transparent;
-  min-width: 12rem;
-  max-width: 14rem;
-  padding: 0.8rem 1.5rem;
-  border: solid 1px #191919;
-  border-radius: 1.5rem;
-  transition: background-color ease-in-out 100ms, transform ease-in-out 100ms;
-}
-
-.btn-transparent a {
-  color: #191919;
-  text-decoration: none;
-}
-.btn-transparent:hover {
-  background-color: #1d1d1d;
-}
-.btn-transparent:hover a {
-  color: #DAD9D3;
-}
-.btn-transparent:active {
-  background-color: #868686;
-  transform: scale(1.05);
-}
-
-@media (max-width: 998px) {
-  .btn-transparent {
-    font-size: 16px;
-    width: 120px;
-  }
-}
-
 .btn-black {
   background-color: #191919;
   border: none;
   color: #FFFFFF;
   z-index: 1;
-  padding: 0.8rem 2rem;
+  min-width: 12rem;
+  max-width: 16rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 2rem;
   transition: background-color ease-in-out 100ms, transform ease-in-out 100ms;
 }
@@ -733,7 +704,7 @@ html, body
 }
 
 .section-about-company {
-  padding-block: 8rem;
+  padding-bottom   : 8rem;
 }
 @media (max-width: 1600px) {
   .section-about-company {
@@ -797,16 +768,14 @@ html, body
 }
 @media (max-width: 1200px) {
   .section-about-company .container .content .btn-container {
-    display: block;
-    margin: 0rem;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    gap: 1rem;
+  
   }
   .section-about-company .container .content .btn-container .btn-black {
     margin-bottom: 1rem;
-  }
-}
-@media (max-width: 768px) {
-  .section-about-company .container .content .btn-container {
-    padding: 1rem;
   }
 }
 .section-about-company .image-and-text-container {
@@ -886,13 +855,17 @@ html, body
   margin-right: 0.6rem;
 }
 
-.section-our-services {
-  background-color: #F0EFE9;
-  padding-inline: 18rem;
-  padding-block: 8rem;
-  display: block;
-  position: relative;
+@media (min-width: 200px)
+{
+  .section-our-services {
+    background-color: #F0EFE9;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    display: block;
+    position: relative;
+  }
 }
+
 .section-our-services .design-element-2 {
   position: absolute;
   bottom: 0;
@@ -906,50 +879,50 @@ html, body
   padding: 0;
   z-index: -1;
 }
-@media (max-width: 1800px) {
-  .section-our-services {
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-@media (max-width: 768px) {
-  .section-our-services {
-    padding: 1rem;
-  }
-}
+
 .section-our-services .wrapper-grid {
   background-color: transparent;
   position: relative;
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (min-width: 100px) {
   .section-our-services .wrapper-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
-.section-our-services .wrapper-grid .container {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  width: 30rem;
-  display: block;
-}
-@media (max-width: 998px) {
-  .section-our-services .wrapper-grid .container {
-    display: flex;
-    flex-direction: column;
+
+@media (min-width: 768px) {
+  .section-our-services .wrapper-grid {
+    display: block;
+    padding-inline: 18rem;
+    margin: auto;
   }
 }
-@media (max-width: 768px) {
-  .section-our-services .wrapper-grid .container {
-    width: 90%;
+
+@media (min-width: 1800px) {
+  .section-our-services .wrapper-grid {
+    max-width: 1320px;
+    padding: 0; 
   }
 }
+
+@media (min-width: 100px) 
+{
+.section-our-services .wrapper-grid .containerHeadlineOurServices {
+ width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-our-services .wrapper-grid .containerHeadlineOurServices 
+  {
+    width: 30rem;
+    
+  }
+}
+
 
 @media (min-width: 200px) {
   .section-our-services .wrapper-grid .grid-container {
@@ -959,15 +932,8 @@ html, body
   }
 }
 
-@media (min-width: 1800px) {
-  .section-our-services .wrapper-grid .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 3rem;
-  }
-}
 
-@media (min-width: 1900px) {
+@media (min-width: 1400px) {
   .section-our-services .wrapper-grid .grid-container {
     display: flex;
     justify-content: space-between;
@@ -977,12 +943,13 @@ html, body
   }
 }
 
-@media (min-width: 320px){
-.service-box {
+@media (min-width: 200px)
+{
+  .service-box 
+  {
   color: #191919;
   background-color: #fffefe;
-  width: 18rem;
-  height: 20rem;
+  
   padding: 1.5rem;
   margin-bottom: 1rem;
   transition: background-color ease-in-out 100ms;
@@ -991,9 +958,27 @@ html, body
   {
     background-color:  #F9D783;
   }
+  }
 }
 
+@media (min-width: 768px)
+{
+  .service-box
+  {
+  width: 18rem;
+  height: 22rem;
+  } 
 }
+
+@media (min-width: 1800px)
+{
+  .service-box
+  {
+  width: 18rem;
+  height: 21rem;
+  } 
+}
+
 .service-box .line {
   border-color: #191919;
   border-width: 0.2rem;
@@ -1297,7 +1282,7 @@ html, body
 .section-testimonial {
   background-color: #F9D783;
   padding-inline: 16rem;
-  padding-bottom: 8rem;
+  padding-bottom: 4rem;
 }
 @media (max-width: 1400px) {
   .section-testimonial {
@@ -1319,12 +1304,12 @@ html, body
 }
 .section-testimonial .white-background {
   background-color: #FFFFFF;
-  padding-top: 6rem;
+  padding-top: 5rem;
+  padding-inline: 6rem;  
 }
 
 @media (max-width: 1400px) {
   .section-testimonial .white-background {
-    inset: 0;
     padding: 2rem;
   }
 }
@@ -1341,7 +1326,6 @@ html, body
 .section-testimonial .white-background .container-reviews {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding-inline: 6rem;
   padding-block: 4rem;
   text-align: left;
   row-gap: 2rem;
@@ -1607,12 +1591,11 @@ html, body
   border-radius: 2rem;
   border: none;
   padding: 0.8rem;
-  margin-right: 1rem;
+  outline: none;
 }
 @media (max-width: 998px) {
   .section-get-news .my-container .input {
     padding: 1rem;
-    margin: 1rem;
   }
 }
 @media (max-width: 324px) {
@@ -1824,6 +1807,8 @@ html, body
   background-color: #DAD9D3;
 }
 
+/* Let'sConnectPage */
+
 .lets-connect {
   background-color: #F0EFE9;
   position: relative;
@@ -1845,6 +1830,12 @@ html, body
 @media (max-width: 768px) {
   .lets-connect .container {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .lets-connect .container .content {
+    border: none;
   }
 }
 
@@ -2369,6 +2360,8 @@ html, body
   }
 }
 
+/* LoginPage */
+
 .section.login {
   background-color: #F0EFE9;
   padding-block: 4rem;
@@ -2383,6 +2376,7 @@ html, body
 }
 .section.login .design-element #element {
   width: 100%;
+  
 }
 .section.login .container.login {
   z-index: 1;
@@ -2425,21 +2419,126 @@ html, body
   outline: none;
 }
 
+/* NotFoundPage */
+
+
 .NotFoundSection
+{
+  display: flex;
+  justify-content: center;
+}
+
+.NotFoundSection .NotFoundContainer
 {
     padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 30vw;
+    text-align: center;
+}
+
+.NotFoundSection .NotFoundContainer .NotFoundHeadline
+{
+    text-align: center;
 }
 
 .NotFoundSection .ButtonNotFound
 {
-  display: block;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .diver
 {
   background-color: #F0EFE9;
+}
+
+@media (min-width: 200px)
+{
+.wrapper-grid-Services
+{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; 
+}
+.containerServices
+{
+  display: none;
+}
+}
+
+@media (min-width: 768px)
+{
+.containerServices
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+
+.wrapper-grid-Services .slider
+{
+   display: none;
+}
+
+}
+
+@media (min-width: 1400px)
+{
+.wrapper-grid-Services
+{
+   padding-inline: 18rem;
+   padding-block: 2rem;
+}
+}
+
+.error
+{
+  background-color: rgb(255, 246, 246);
+  border: solid 1px rgb(255, 78, 78);
+}
+
+#inputErrorMessage
+{
+  position: relative;
+}
+#errorMessage
+{
+  color: rgb(251, 56, 56);
+  position: absolute;
+  bottom: -50%;
+  left: 25%;
+}
+
+#errorUsername
+{
+  color: rgb(251, 56, 56);
+}
+
+#errorPassword
+{
+  color: rgb(251, 56, 56);
+}
+
+@media (min-width:100px)
+{
+#SubscribeBtn
+{
+  margin-left: 1rem;
+}
+}
+
+@media (max-width: 998px)
+{
+#SubscribeBtn
+{
+  margin-left: 0;
+  margin-top: 1.8rem;
+}
 }

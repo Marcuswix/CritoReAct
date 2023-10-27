@@ -40,10 +40,10 @@ const Footer = () => {
       <div className="page-end">
         <p className="copy-right">© 2023 Crito - Consulting Company Inc. All Rights Reserved.</p>
         <div className="social-media">
-          <a href="https://www.facebook.com/campaign/landing.php?campaign_id=10823226160&extra_1=s%7Cc%7C514041439169%7Cb%7Cfacebook%7C&placement=&creative=514041439169&keyword=facebook&partner_id=googlesem&extra_2=campaignid%3D10823226160%26adgroupid%3D110178056158%26matchtype%3Db%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-11403291%26loc_physical_ms%3D1012475%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAjwo9unBhBTEiwAipC116HZpmxyfUmhluYdTArXaEbPa9jMVHk0s1f-1T9giPi9Ds_KqUhZcRoC6W0QAvD_BwE"><i className="fa-brands fa-facebook"></i></a>
-          <a href="https://twitter.com/X"><i className="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.instagram.com/"><i className="fa-brands fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/home"><i className="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i className="fa-brands fa-facebook"></i></a>
+          <a href="https://twitter.com/X" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i className="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/home" target="_blank"><i className="fa-brands fa-linkedin"></i></a>
         </div>
       </div>
     </footer>
