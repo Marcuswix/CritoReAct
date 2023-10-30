@@ -2,6 +2,7 @@ import React from 'react'
 import img_Logo from '../../assets/images/Logo-black.svg';
 import img_Element from '../../assets/images/Element grey 2.svg'
 import Boxes from './Boxes';
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -14,7 +15,8 @@ const Footer = () => {
     </div>
 
       <div className="container-parent">
-        <div className="logo"><img src={img_Logo} alt="Critos logotype" />
+        <div className="logo">
+          <Link to="/"><img src={img_Logo} alt="Critos logotype" /></Link> 
           <p className="p-company">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati voluptas voluptates! Voluptates laborum nam ratione minus necessitatibus, iure praesentium.</p>
         </div>  
 

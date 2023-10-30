@@ -19,7 +19,7 @@ const Header = () => {
 
         <div id="overlay">
         </div>
-          <nav id="menu" className="">
+          <nav id="menu" className=''>
             <ul>
               <li><Link to="/"><img id="logo-menu-mobil" src={img_logo} alt="Crito logotype" /></Link></li>
               <li id="option-home"><NavLink to="/" >Home</NavLink></li>
@@ -52,7 +52,6 @@ const Header = () => {
                       <a href="https://www.linkedin.com/home" target="_blank"><i className="fa-brands fa-linkedin"></i></a>
                   </div>
                 </div>
-
                   <div className="main-menu">
                     <nav>
                       <NavLink to="/">Home</NavLink>

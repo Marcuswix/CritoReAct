@@ -15,11 +15,8 @@ const Contact = () => {
     </div>
 </section>
 
-
 <section className="visit-call-email">
-
     <div className="container">
-
       <Info title="Visit us" info_one="Sveavägen 31" info_two="111 34 STOCKHOLM"  svg={<svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <g id="Icon" transform="translate(-360 -588)">
             <circle id="Ellipse_10" data-name="Ellipse 10" cx="30" cy="30" r="30" transform="translate(360 588)" fill="#191919"/>
@@ -28,7 +25,6 @@ const Contact = () => {
             <g id="Group">
             <path id="Vector" d="M16.008,12.49a8.519,8.519,0,0,1-.91,1.37c-.035.044-.071.087-.108.13h0L14.981,14H15L9.956,19.355a2,2,0,0,1-2.911,0L2,14h.019l-.009-.01L2,13.977A8.5,8.5,0,1,1,16.007,12.49Zm-5.384-1.618A3,3,0,1,0,8.5,11.75,3,3,0,0,0,10.623,10.871Z" transform="translate(3.5 2)" fill="#fff"/>
             </g></g></g></svg>} />
-
       <Info title="Call us" info_one="+46 (8) 121 470 50" info_two="+46 (8) 121 470 51" svg={<svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <g id="Icon" transform="translate(-810 -588)">
             <circle id="Ellipse_10" data-name="Ellipse 10" cx="30" cy="30" r="30" transform="translate(810 588)" fill="#191919"/>
@@ -36,7 +32,6 @@ const Contact = () => {
             <rect id="ic:round-call-2" data-name="ic:round-call" width="24" height="24" fill="none"/>
             <path id="Vector" d="M12.631,11.4a.985.985,0,0,1,.9-.26l3.67.73a1,1,0,0,1,.8.98V17a1,1,0,0,1-1.03,1A18.049,18.049,0,0,1,9,15.57,18.075,18.075,0,0,1,2.431,9,17.921,17.921,0,0,1,0,1.03,1,1,0,0,1,1,0h4.15a1,1,0,0,1,.98.8l.75,3.68a1.026,1.026,0,0,1-.27.9L4.111,7.9a16.144,16.144,0,0,0,6,6l2.52-2.5Z" transform="translate(2.999 3)" fill="#fff"/>
             </g></g></svg>} />
- 
       <Info title="Email us" info_one="info@crito.com" info_two="support@crito.com" svg={<svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <g id="Icon" transform="translate(-1263 -588)">
               <circle id="Ellipse_10" data-name="Ellipse 10" cx="30" cy="30" r="30" transform="translate(1263 588)" fill="#191919"/>
@@ -54,11 +49,14 @@ const Contact = () => {
             <div className="textbox">
               <h1>Leave us a message<br />for any information.</h1>
             </div>
-            <form className="forms" method="post" actions="#" id="Contact-form" title="Contact-form" autoComplete="on">
+            <form className="forms" method="post" actions="#" id="Contact-form" title="Contact-form" autoComplete="on" onSubmit={validate} noValidate>
               <input className="input" tabIndex="1" type="text" id="name" name="name" title="Name" placeholder="Name*" />
+              <span id="invalidName" className='inValid'></span>
               <input className="input" tabIndex="2" type="email" id="email" name="email" title="Email" placeholder="Email*" />
+              <span id="invalidEmail" className='inValid'></span>
               <textarea className="input" tabIndex="3" type="textarea" id="message" title="Your meassage" name="message" placeholder="Your Message*">
               </textarea>
+              <span id="invalidMessage" className='inValid'></span>
               <button className="btn-yellow" tabIndex="4" type="submit" title="Send">Send
               <svg className="arrow bi bi-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
               <path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
@@ -69,15 +67,93 @@ const Contact = () => {
     </div>
 </section>
 
-
 <section className="map">
   <iframe className="big-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15218.90215123078!2d18.06346706264281!3d59.3332896355906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694702183755!5m2!1ssv!2sse" width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
   <iframe className="medium-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21940.039959008154!2d18.02775163404334!3d59.33507764623113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694761329003!5m2!1ssv!2sse" width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
   <iframe className="small-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7793860707923!2d18.062010500000003!3d59.336636999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1695979804848!5m2!1ssv!2sse" width="260" height="260" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 </section>
-
     </>
   )
 }
-
 export default Contact
+
+function validate(e)
+{
+  e.preventDefault(); // Förhindrar att det skickas!
+
+  validateName();
+  validateEmail();
+  validateMessage();
+
+  const name = validateName();
+  const email = validateEmail();
+  const message = validateMessage(); 
+
+  if (name && email && message)
+  {
+    document.getElementById("Contact-form").submit();
+    console.log("Validering ok")
+  }
+}
+
+function validateName()
+{
+  const nameInput = document.getElementById("name").value;
+  const nameRegEx = /^[A-Za-z\s]{2,}$/
+  ;
+
+if (nameRegEx.test(nameInput))
+{
+  //alert("Name is valid")
+  document.getElementById("name").classList.remove("error")
+  document.getElementById("invalidName").innerHTML = ""
+  return true;
+}
+else
+{
+  //alert("Name is invalid")
+  document.getElementById("name").classList.add("error")
+  document.getElementById("invalidName").innerHTML = "Name is invalide"
+  return false;
+}
+}
+
+function validateEmail()
+{
+  const emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const email = document.getElementById("email").value;
+
+  if (emailRegEx.test(email) && email.length != 0)
+  {
+    document.getElementById("email").classList.remove("error");
+    document.getElementById("invalidEmail").innerHTML = "";
+    return true
+  }
+  else
+  {
+    document.getElementById("email").classList.add("error");
+    document.getElementById("invalidEmail").innerHTML = "Email is invalid"
+    return false
+  }
+}
+
+function validateMessage()
+{
+  const message = document.getElementById("message").value;
+  const messageRegEx = /^[A-Za-zåäöÅÄÖ\s!?,.'"-]{2,}$/
+
+  ;
+
+  if (messageRegEx.test(message))
+  {
+    document.getElementById("message").classList.remove("error")
+    document.getElementById("invalidMessage").innerHTML = ""
+    return true;
+  }
+  else
+  {
+    document.getElementById("message").classList.add("error")
+    document.getElementById("invalidMessage").innerHTML = "You must enter a valid message"
+    return false;
+  }
+}

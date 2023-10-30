@@ -31,15 +31,15 @@ const News = () => {
             <div className="carousel-inner">
 
                 <div className="carousel-item active">
-                    <Articles month="Mar" date="25" subject="Business" headline="How To Use Digitalization In The Classroom" img={img_Digitalization} />
+                    <Articles month="Mar" date="25" subject="Business" headline="How To Use Digitalization In The Classroom" img={img_Digitalization} url="NewsArticles" />
                 </div>
 
                 <div className="carousel-item">
-                    <Articles month="Mar" date="17" subject="Business" headline="How To Implement Chat GPT In Your Projects" img={img_ChatGPT} />
+                    <Articles month="Mar" date="17" subject="Business" headline="How To Implement Chat GPT In Your Projects" img={img_ChatGPT} url="NewsArticles" />
                 </div>
 
                 <div className="carousel-item">
-                    <Articles month="Mar" date="13" subject="Business" headline="The Guide To Support Modern CSS Design" img={img_CSS} />
+                    <Articles month="Mar" date="13" subject="Business" headline="The Guide To Support Modern CSS Design" img={img_CSS} url="NewsArticles" />
                 </div>
 
             </div>
