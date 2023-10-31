@@ -1,9 +1,103 @@
 import React from 'react'
 import img_Element from '../../assets/images/Element-left.svg'
 import Info from './ContactInformation'
+import { useState } from 'react'
 
 const Contact = () => {
-  return (
+
+  const [name, setName] = useState('') 
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
+  const [errorName, setErrorName] = useState('')
+  const [errorEmail, setErrorEmail] = useState('')
+  const [successMessage, setSuccessMeassage] = useState("Your Message has successfully been sent!")
+
+  async function handleSubmit(e)
+  {
+    e.preventDefault()
+
+    let isValid = true;
+    const data = {name, email, message}
+    const messageSuccess = document.getElementById("MessageHasBeenSent")
+
+        //Validate Message
+        if (!message)
+        {
+          setErrorMessage (<p>Message is empty. Please type a message.</p>)
+          document.getElementById("message").classList.add("error")
+          isValid = false;
+        }
+        else
+        {
+          setErrorMessage('')
+          document.getElementById("message").classList.remove("error")
+        }
+        
+        // Validate Name
+        const nameRegEx = /^[A-Za-z\s]{2,}$/;
+        if (!name || !nameRegEx.test(name))
+        {
+          setErrorName (<p>The name is invalid. Please type a valid name.</p>)
+          document.getElementById("name").classList.add("error")
+          isValid = false;
+        }
+        else
+        {
+          setErrorName('')
+          document.getElementById("name").classList.remove("error")
+        }
+    
+        // Validate Email
+        const emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegEx.test(email))
+        {
+          setErrorEmail (<p>No vaild Email. Please type a vaild email</p>)
+          document.getElementById("email").classList.add("error")
+          isValid = false;
+        }
+        else
+        {
+          setErrorEmail('')
+          document.getElementById("email").classList.remove("error")
+        }
+
+    if (isValid)
+    {
+      fetch('https://win23-assignment.azurewebsites.net/api/contactform' , {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+    .then(function (response) {
+    if (response.ok) {
+    setName('');
+    setEmail('');
+    setMessage('');
+    messageSuccess.style.opacity = 1;
+    messageSuccess.style.zIndex = 1;
+    setTimeout(() => {
+    messageSuccess.style.opacity = 0
+    }, 2600)
+    setTimeout(() => {
+      messageSuccess.style.zIndex = -1;
+      }, 3600)
+    // alert('your message has been sent successfully')
+    console.log("Your message has been sent");
+    } 
+    else {
+    console.error("Error in response");
+    }
+    })
+    .catch(function (error) {
+    console.error("Error", error);
+    }); 
+    }
+    else
+    console.log("Form is not valid")
+  }
+
+return (
     <>
 <section className="lets-connect">
   <img className="element" title="Image-element" src={img_Element} alt="A design element" />
@@ -39,7 +133,6 @@ const Contact = () => {
               <rect id="dashicons:email-alt-2" data-name="dashicons:email-alt" width="24" height="24" fill="none"/>
               <path id="Vector" d="M18.612,14.4H1.8A1.8,1.8,0,0,1,0,12.6V1.8A1.8,1.8,0,0,1,1.8,0H18.612a1.8,1.8,0,0,1,1.8,1.8V12.6A1.8,1.8,0,0,1,18.612,14.4ZM18.84,1.668c-.4-.4-.8-.2-1.14.084L10.2,7.8,2.712,1.752c-.336-.288-.744-.48-1.14-.084a.659.659,0,0,0,.036,1.008L6.48,7.14,1.8,12.012a.465.465,0,0,0-.072.612.546.546,0,0,0,.672.06L7.644,8.208l2.556,2.34,2.568-2.34,5.244,4.476a.546.546,0,0,0,.672-.06.465.465,0,0,0-.072-.612L13.932,7.14,18.8,2.676a.659.659,0,0,0,.036-1.008Z" transform="translate(2.388 4.8)" fill="#fff"/>
             </g></g></svg>} />   
-     
     </div>
 </section>
 
@@ -49,111 +142,31 @@ const Contact = () => {
             <div className="textbox">
               <h1>Leave us a message<br />for any information.</h1>
             </div>
-            <form className="forms" method="post" actions="#" id="Contact-form" title="Contact-form" autoComplete="on" onSubmit={validate} noValidate>
-              <input className="input" tabIndex="1" type="text" id="name" name="name" title="Name" placeholder="Name*" />
-              <span id="invalidName" className='inValid'></span>
-              <input className="input" tabIndex="2" type="email" id="email" name="email" title="Email" placeholder="Email*" />
-              <span id="invalidEmail" className='inValid'></span>
-              <textarea className="input" tabIndex="3" type="textarea" id="message" title="Your meassage" name="message" placeholder="Your Message*">
+            <form className="forms" method="post" id="Contact-form" title="Contact-form" autoComplete="on" noValidate>
+              <input className="input" tabIndex="1" type="text" id="name" name="name" title="Name" placeholder="Name*" value={name} onChange={ (e) => setName(e.target.value)} />
+              <span id="invalidName" className='inValid'>{errorName}</span>
+              <input className="input" tabIndex="2" type="email" id="email" name="email" title="Email" placeholder="Email*" value={email} onChange={ (e) => setEmail(e.target.value)} />
+              <span id="invalidEmail" className='inValid'>{errorEmail}</span>
+              <textarea className="input" tabIndex="3" type="textarea" id="message" title="Your meassage" name="message" placeholder="Your Message*" value={message} onChange={ (e) => setMessage(e.target.value)} >
               </textarea>
-              <span id="invalidMessage" className='inValid'></span>
-              <button className="btn-yellow" tabIndex="4" type="submit" title="Send">Send
+              <span id="invalidMessage" className='inValid'>{errorMessage}</span>
+              <button className="btn-yellow" tabIndex="4" type="submit" title="Send" onClick={handleSubmit}>Send
               <svg className="arrow bi bi-arrow-up-right" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
               <path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
               </svg>   
               </button>
             </form>
+            <div className="MessageHasBeenSent" id="MessageHasBeenSent">
+              {successMessage}  
+            </div>
         </div>
     </div>
 </section>
 
-<section className="map">
-  <iframe className="big-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15218.90215123078!2d18.06346706264281!3d59.3332896355906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694702183755!5m2!1ssv!2sse" width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-  <iframe className="medium-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21940.039959008154!2d18.02775163404334!3d59.33507764623113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694761329003!5m2!1ssv!2sse" width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-  <iframe className="small-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.7793860707923!2d18.062010500000003!3d59.336636999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1695979804848!5m2!1ssv!2sse" width="260" height="260" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-</section>
-    </>
+<section className="mapWrapper">
+  <iframe className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15218.90215123078!2d18.06346706264281!3d59.3332896355906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d6799554e87%3A0x6562d2c842903003!2sSveav%C3%A4gen%2031%2C%20111%2034%20Stockholm!5e0!3m2!1ssv!2sse!4v1694702183755!5m2!1ssv!2sse" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+</section> 
+</>
   )
 }
 export default Contact
-
-function validate(e)
-{
-  e.preventDefault(); // Förhindrar att det skickas!
-
-  validateName();
-  validateEmail();
-  validateMessage();
-
-  const name = validateName();
-  const email = validateEmail();
-  const message = validateMessage(); 
-
-  if (name && email && message)
-  {
-    document.getElementById("Contact-form").submit();
-    console.log("Validering ok")
-  }
-}
-
-function validateName()
-{
-  const nameInput = document.getElementById("name").value;
-  const nameRegEx = /^[A-Za-z\s]{2,}$/
-  ;
-
-if (nameRegEx.test(nameInput))
-{
-  //alert("Name is valid")
-  document.getElementById("name").classList.remove("error")
-  document.getElementById("invalidName").innerHTML = ""
-  return true;
-}
-else
-{
-  //alert("Name is invalid")
-  document.getElementById("name").classList.add("error")
-  document.getElementById("invalidName").innerHTML = "Name is invalide"
-  return false;
-}
-}
-
-function validateEmail()
-{
-  const emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const email = document.getElementById("email").value;
-
-  if (emailRegEx.test(email) && email.length != 0)
-  {
-    document.getElementById("email").classList.remove("error");
-    document.getElementById("invalidEmail").innerHTML = "";
-    return true
-  }
-  else
-  {
-    document.getElementById("email").classList.add("error");
-    document.getElementById("invalidEmail").innerHTML = "Email is invalid"
-    return false
-  }
-}
-
-function validateMessage()
-{
-  const message = document.getElementById("message").value;
-  const messageRegEx = /^[A-Za-zåäöÅÄÖ\s!?,.'"-]{2,}$/
-
-  ;
-
-  if (messageRegEx.test(message))
-  {
-    document.getElementById("message").classList.remove("error")
-    document.getElementById("invalidMessage").innerHTML = ""
-    return true;
-  }
-  else
-  {
-    document.getElementById("message").classList.add("error")
-    document.getElementById("invalidMessage").innerHTML = "You must enter a valid message"
-    return false;
-  }
-}

@@ -1894,6 +1894,23 @@ html, body
 
 .leave-us-a-message .wrapper-grid {
   padding-inline: 4rem;
+  position: relative;
+}
+
+.leave-us-a-message .wrapper-grid .MessageHasBeenSent{
+  width: 90%;
+  max-width: 24rem;
+  height: 7rem;
+  background-color: #F9D783;
+  position: fixed;
+  bottom: 50%;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity ease-out 1s;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .leave-us-a-message .wrapper-grid {
@@ -1954,35 +1971,31 @@ html, body
   width: 100%;
 }
 
-.map {
-  display: flex;
-  justify-content: center;
-  padding-top: 6rem;
-  padding-inline: 0rem;
-  width: 100%;
-}
-@media (min-width: 468px) {
-  .map .small-map {
-    display: none;
-  }
-}
-@media (min-width: 768px) {
-  .map .medium-map {
-    display: none;
-  }
-}
-@media (max-width: 468px) {
-  .map .medium-map {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
-  .map {
+@media (min-width: 100px)
+{
+  .mapWrapper {
+    display: flex;
+    justify-content: center;
     padding-top: 2rem;
+    padding-inline: 0rem;
+    width: 100%;
+    height: 40vh;
   }
-  .map .big-map {
-    display: none;
+}
+
+@media (min-width: 768px)
+{
+  .mapWrapper {
+    padding-top: 6rem;
+    padding-inline: 0rem;
+    width: 100%;
+    height: 60vh;
   }
+}
+
+.mapWrapper .map
+{
+  width: 100%;
 }
 
 .wrapper-grid-news {
@@ -2549,7 +2562,7 @@ html, body
 
 .inValid
 {
-  margin-bottom: 0.2rem;
+  margin-top: 0.3rem;
   padding: 0; 
   display: flex;
   justify-content: center;
