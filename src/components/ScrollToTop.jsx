@@ -17,10 +17,3 @@ const ScrollToTop = () => {
 }
 
 export default ScrollToTop
-
-
-    // const { pathname } = useLocation()
-
-    // useEffect(() => {
-    //     window.scrollTo({ top: 0, behavior: 'instant' })
-    // }, [pathname])

@@ -1,5 +1,5 @@
 import React from 'react';
-import NewsPage from '../components/News/News';
+import NewsPage from '../components/NewsAndArticlesPage/News';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 

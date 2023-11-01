@@ -80,8 +80,8 @@ const Contact = () => {
     messageSuccess.style.opacity = 0
     }, 2600)
     setTimeout(() => {
-      messageSuccess.style.zIndex = -1;
-      }, 3600)
+    messageSuccess.style.zIndex = -1;
+    }, 3600)
     // alert('your message has been sent successfully')
     console.log("Your message has been sent");
     } 

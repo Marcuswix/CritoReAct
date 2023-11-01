@@ -1,0 +1,22 @@
+.UnderConstruction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 4rem;
+  text-align: center;
+}
+
+.text {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.imageContainer {
+  max-width: 40rem;
+  padding-block: 0rem;
+  padding-inline: 1rem;
+}
+.imageContainer #ConstructionImage {
+  width: 100%;
+}

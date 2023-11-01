@@ -15,6 +15,16 @@
     padding-top: 1rem;
     padding-bottom: 1.5rem;
   }
+  .imageContainer {
+    width: 100%;
+    padding: 0rem;
+    height: 16rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .imageContainer .image-article {
+    width: 100%;
+  }
 }
 @media (min-width: 1400px) {
   .section.section-article {
@@ -34,6 +44,16 @@
   }
   .sliderArticleNews {
     max-width: 1320px;
+    padding-block: 1rem;
+  }
+  .sliderArticleNews .articleContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+  .sliderArticleNews .articleContainer .article {
+    height: 30rem;
   }
 }
 .sliderArticleNews {

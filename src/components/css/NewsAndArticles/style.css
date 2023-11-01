@@ -32,7 +32,7 @@
 }
 .content .picture-and-date .date {
   width: 56px;
-  height: 64px;
+  height: 76px;
   background-color: #F9D783;
   position: absolute;
   top: 15px;
@@ -46,6 +46,10 @@
   padding: none;
   font-size: 1.4em;
 }
+.content .picture-and-date .date .dateDate {
+  font-size: 1rem;
+  font-weight: 600;
+}
 .content h3 {
   width: 90%;
   line-height: 1.7rem;
@@ -56,8 +60,8 @@
   margin: 0;
   line-height: 1.6rem;
 }
-.content .p-headline {
+.content .p-category {
   margin-block: 1rem;
-  color: rgb(51, 51, 51);
-  font-size: 0.9em;
+  color: rgb(148, 148, 148);
+  font-size: 0.8em;
 }

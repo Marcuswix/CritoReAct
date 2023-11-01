@@ -8,8 +8,8 @@ const NotFound = () => {
     <>
     <section class="NotFoundSection">
         <div className="NotFoundContainer">
-            <h1 class="NotFoundHeadline">404 - Page Not Found</h1>
             <img src={img_cryingMan} alt="A picture on a man crying" />
+            <h1 class="NotFoundHeadline">404 - Page Not Found</h1>
             <div className='ButtonNotFound'>
                 <BtnYellow title="Get Back To Home" linkTo="/" />
             </div>

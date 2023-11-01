@@ -8,10 +8,11 @@ import Home from './views/Home';
 import Contacts from './views/Contacts';
 import NotFound from './views/NotFound';
 import News from './views/News';
-import NewsArticles from './views/NewsArticles';
+import Article from './views/Articles';
 import Login from './views/Login';
 import Services from './views/Services'
 import ScrollToTop from './components/ScrollToTop';
+import UnderConstruction from './views/UnderConstruction';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,9 +24,10 @@ root.render(
         <Route path='/Contacts' element={<Contacts />} />
         <Route path='*' element={<NotFound />} />
         <Route path='/News' element={<News />} />
-        <Route path='/NewsArticles' element={<NewsArticles />} />
+        <Route path='/Articles/:id' element={<Article />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Services' element={<Services />} />
+        <Route path='/UnderConstruction' element={<UnderConstruction />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -23,7 +23,7 @@ const AboutCompany = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis esse quasi incidunt adipisci accusantium libero provident voluptate amet.</p>   
 
             <div className="btn-container">
-                <BtnBlack title="Learn More" url="learnMore.html" />
+                <BtnBlack title="Learn More" linkTo="/UnderConstruction" />
                 <button className="btn-play" title="Play">
                 <a href="https://www.youtube.com/watch?v=7TIr9ajYzfQ&ab_channel=Wix-Topic" target="_blank">
                     <svg className="playicon" id="Video" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
