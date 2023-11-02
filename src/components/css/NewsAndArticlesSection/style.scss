@@ -118,3 +118,26 @@
     }
 
 }
+
+.linkTitle
+{
+    color: black;
+    text-decoration: none;
+    
+    &:hover
+    {
+    color: rgb(66, 66, 66);
+    text-decoration: underline
+    }
+
+    &:active
+    {
+        color: rgb(143, 143, 143); 
+    }
+}
+
+.imageContainerNewsAndArticles
+{
+    padding: 0; 
+}
+

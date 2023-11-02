@@ -65,3 +65,26 @@
   color: rgb(148, 148, 148);
   font-size: 0.8em;
 }
+
+.imageContainerArticle {
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+.imageContainerArticle .image-article {
+  width: 100%;
+  height: 16rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 100px) {
+  .wrapper-grid-news h1 {
+    text-align: center;
+  }
+}
+@media (min-width: 998px) {
+  .wrapper-grid-news h1 {
+    text-align: left;
+  }
+}

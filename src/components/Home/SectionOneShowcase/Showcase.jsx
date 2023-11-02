@@ -18,7 +18,7 @@ const Showcase = () => {
                     </div>
                 </div>
 
-                <div className="imageContainer">
+                <div className="imageContainerShowcase">
                     <img id="mainImage" src={img_Showcase} />
                 </div>
                 

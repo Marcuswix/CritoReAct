@@ -59,8 +59,8 @@ const News = () => {
                                     </div>
                                     <div className='sliderLink'>
                                         <p className="p-headline">{article.category}</p>
-                                        <Link key={article.id} to={`/Articles/${article.id}`}>
-                                        <h3 class="linkTitle">{article.title}</h3>
+                                        <Link className="linkTitle" key={article.id} to={`/Articles/${article.id}`}>
+                                        <h3>{article.title}</h3>
                                         </Link>
                                     </div>
                                 </div>

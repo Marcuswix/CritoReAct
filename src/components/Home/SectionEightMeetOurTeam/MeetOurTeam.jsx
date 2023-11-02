@@ -26,7 +26,7 @@ const MeetOurTeam = () => {
           <SectionTitle title="Meet Our Team" headline="Experience Team Members" />
         </div>
         <div>
-          <BtnTransparent title="Meet-our-team" linkTo="#" />
+          <BtnTransparent title="Meet-our-team" linkTo="/UnderConstruction" />
         </div>
       </div>
 

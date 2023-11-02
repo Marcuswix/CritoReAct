@@ -1,13 +1,10 @@
 import React from 'react'
 import Article from '../../NewsAndArticlesPage/Articles'
-import img_Digitalization from '../../../assets/images/image-article1.png'
-import img_CSS from '../../../assets/images/Image-article2.png'
-import img_ChatGPT from '../../../assets/images/Image-article3.png'
 import SectionTitle from '../../generics/SectionTitle'
 import BtnTransparent from '../../generics/BtnTransparent'
 import '../../css/NewsAndArticlesSection/style.css'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const NewsAndArticles = () => {
 
@@ -30,12 +27,18 @@ const NewsAndArticles = () => {
     setArticles(await result.json())
   }
 
-  const cutText = (text, maxLength) => {
-    if (text.length > maxLength) {
+  function cutText(text)
+  {
+    const maxLength = 10
+    if(text.length > maxLength)
+    {
       return text.slice(0, maxLength)
     }
-    return text;
-  };
+    else
+    {
+      return text;
+    }
+  }
 
   return (
   <>
@@ -52,7 +55,7 @@ const NewsAndArticles = () => {
     <div className="articleContainer">
       {articles.slice(0, 3).map(article => (
         <div className="article" key={article.id}>
-          <Article month={cutText(article.published, 10)} category={article.category} title={article.title} img={article.imageUrl} linkTo={`/Articles/${article.id}`} content={article.content} />
+          <Article month={cutText(article.published)} category={article.category} title={article.title} img={article.imageUrl} linkTo={`/Articles/${article.id}`} content={article.content} />
         </div>
       ))}
     </div>
@@ -69,9 +72,9 @@ const NewsAndArticles = () => {
           </div>
             <div className='sliderLink'>
               <p className="p-headline">{article.category}</p>
-              <Link key={article.id} to={`/Articles/${article.id}`}>
-              <h3 className="linkTitle">{article.title}</h3>
-              </Link>
+              <NavLink className="linkTitle" key={article.id} to={`/Articles/${article.id}`}>
+              <h3 >{article.title}</h3>
+              </NavLink>
             </div>
           </div>
           ))}

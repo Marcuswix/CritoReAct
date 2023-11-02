@@ -14,28 +14,28 @@ const Services = () => {
     <div className="wrapper-grid-Services">
 
       <div className="containerServices">
-          <Article headline="Business Advice" category="Business" img={img_box1} />
-          <Article headline="Strategic Planning" category="Business" img={img_box2} />
-          <Article headline="Experience Design" category="Business" img={img_box3} />
-          <Article headline="Digitalization" category="Business" img={img_box1} />
-          <Article headline="Startup Business" category="Business" img={img_box2} />
-          <Article headline="Digitalization" category="Business" img={img_box3} />
-          <Article headline="Business Advice" category="Business" img={img_box1} />
-          <Article headline="Strategic Planning" category="Business" img={img_box2} />
-          <Article headline="Business Advice" category="Business" img={img_box3} />
+          <Article headline="Business Advice" category="Business" img={img_box1} linkTo={"/UnderConstruction"} />
+          <Article headline="Strategic Planning" category="Business" img={img_box2} linkTo={"/UnderConstruction"} />
+          <Article headline="Experience Design" category="Business" img={img_box3} linkTo={"/UnderConstruction"} />
+          <Article headline="Digitalization" category="Business" img={img_box1} linkTo={"/UnderConstruction"} />
+          <Article headline="Startup Business" category="Business" img={img_box2} linkTo={"/UnderConstruction"} />
+          <Article headline="Digitalization" category="Business" img={img_box3} linkTo={"/UnderConstruction"} />
+          <Article headline="Business Advice" category="Business" img={img_box1} linkTo={"/UnderConstruction"} />
+          <Article headline="Strategic Planning" category="Business" img={img_box2} linkTo={"/UnderConstruction"} />
+          <Article headline="Business Advice" category="Business" img={img_box3} linkTo={"/UnderConstruction"} />
       </div>  
 
   <div className="slider">
     <div id="carouselExample" className="carousel slide">
         <div className="carousel-inner">
             <div className="carousel-item active">
-              <Article headline="Business Advice" category="Business" img={img_box1} />
+              <Article headline="Business Advice" category="Business" img={img_box1} linkTo={"/UnderConstruction"} />
             </div>
             <div className="carousel-item">
-              <Article headline="Strategic Planning" category="Business" img={img_box2} />
+              <Article headline="Strategic Planning" category="Business" img={img_box2} linkTo={"/UnderConstruction"}  />
             </div>
             <div className="carousel-item">
-              <Article headline="Experience Design" category="Business" img={img_box3} />
+              <Article headline="Experience Design" category="Business" img={img_box3} linkTo={"/UnderConstruction"}  />
             </div>
         </div>
 

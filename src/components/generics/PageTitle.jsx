@@ -4,11 +4,11 @@ import img_Element from '../../assets/images/Element-left.svg'
 const PageTitle = ({title, headline}) => {
   return (
     <>
-    <div class="header-and-section-1">
-        <section class="lets-connect">
-        <img class="element" title="Image-element" src={img_Element} alt="A design element" />
-        <div class="container">
-            <div class="content">
+    <div className="header-and-section-1">
+        <section className="lets-connect">
+        <img className="element" title="Image-element" src={img_Element} alt="A design element" />
+        <div className="container">
+            <div className="content">
                 <p>{title}</p>
                 <h1>{headline}</h1>
             </div>

@@ -2,24 +2,26 @@ import React from 'react'
 import PageTitle from '../generics/PageTitle'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import img_Digitalization from '../../assets/images/digitalization article.png'
 import RecentPosts from './RecentPosts'
 import NewsAndArticles from '../Home/SectionNewsAndArticles/NewsAndArticles'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import '../css/NewsArticle/style.css'
 
 const NewsArticle = () => {
 
     const [article, setArticle] = useState ({})
     const { id } = useParams()
+    const { pathname } = useLocation()
 
     useEffect(() => {
       getArticle();
-    }, [])
+    }, [pathname])
   
 
     async function getArticle()
     {
+      console.log(id)
       if (id !== undefined)
       {
       const result = await fetch(`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
@@ -27,10 +29,18 @@ const NewsArticle = () => {
         if (result.status === 200)
         setArticle(await result.json())
       }
-
-      console.log(id)
     }
 
+    function cutText(text) 
+    {
+      const maxLength = 10
+
+      if (text && text.length > maxLength)
+      {
+        return text.slice(0, maxLength)
+      }
+      return text;
+    }
 
   return (
     <>
@@ -43,7 +53,7 @@ const NewsArticle = () => {
             <div className="headlines">
                 <h1>{article.title}</h1>
                 <div className="article-info">
-                <p>{article.published}</p>
+                <p>{cutText(article.published)}</p>
                 <div className="yellow-circle"></div>
                 <p>{article.category}</p>
                 <div className="yellow-circle"></div>
@@ -51,8 +61,8 @@ const NewsArticle = () => {
                 </div>
             </div>
             
-            <div className="content">´
-              <div className="imageContainer"> 
+            <div className="content">
+              <div className="imageContainerPageArticle"> 
                 <img className="image" src={article.imageUrl} alt={article.category} />
               </div>
                 <p>{article.content}</p>

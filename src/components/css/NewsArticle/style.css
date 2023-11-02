@@ -1,0 +1,7 @@
+.imageContainerPageArticle {
+  max-width: 48rem;
+  height: auto;
+}
+.imageContainerPageArticle .image {
+  width: 100%;
+}

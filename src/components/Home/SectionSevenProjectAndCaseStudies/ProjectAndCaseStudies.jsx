@@ -24,7 +24,7 @@ const ProjectAndCaseStudies = () => {
     </div>
 
     <div className="btn-position">
-        <BtnBlack title="All-recent-projects" url="RecentProjects.html" />
+        <BtnBlack title="All-recent-projects" linkTo="/Services" />
     </div>
 </section>
 </>

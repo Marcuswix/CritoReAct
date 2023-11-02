@@ -46,7 +46,7 @@ const Testimonial = () => {
   </div>
 
   <div className="end-of-section">
-    <BtnBlack title="All Reviews" url="AllReviews.html" />
+    <BtnBlack title="All Reviews" linkTo={"/UnderConstruction"} />
   </div>
 
 </section>

@@ -3,16 +3,17 @@ import { useLocation } from 'react-router-dom'
 
 const ScrollToTop = () => {
 
-    const { pathname } = useLocation();
+  //Vi skapar en variablen och "useLocation()" laddar ner den aktuella url:en i variablen
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    }
+    const location = useLocation();
   
-    useEffect(function () {
-      scrollToTop();
-    }, [pathname]);
+  //useEffect triggas varje gång url:en ändras, då [location.pathname] står längst ner i funktionen
+  // och då körs funktionen "scrollTo"
+    useEffect(() => {
+      window.scrollTo({top: 0, behavior: 'instant'})
+    }, [location.pathname]);
   
+  //return null betyder att inget innehåll ska renderas, utan bara att funktionen ska köras
     return null;
 }
 

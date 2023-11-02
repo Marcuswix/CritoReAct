@@ -12,7 +12,7 @@ const Articles = ({month, date, category, title, img, linkTo, content}) => {
                 <h3 className="date-number">{date}</h3>
                 <p className='dateDate' >{month}</p>
             </div>
-            <div className='imageContainer'>
+            <div className="imageContainerArticle">
               <img className="image-article" src={img} />
             </div>
         </div>

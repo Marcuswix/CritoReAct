@@ -13,12 +13,14 @@ import Login from './views/Login';
 import Services from './views/Services'
 import ScrollToTop from './components/ScrollToTop';
 import UnderConstruction from './views/UnderConstruction';
+import ScrollToTopBtn from './components/generics/ScrollToTopBtn';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <ScrollToTop />
+    <ScrollToTopBtn />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Contacts' element={<Contacts />} />

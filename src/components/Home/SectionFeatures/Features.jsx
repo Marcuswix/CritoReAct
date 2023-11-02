@@ -12,7 +12,7 @@ const Features = () => {
         <div className="my-container">
             <div className="content">   
                 <SectionTitle title="Features" headline="Our Accounting is trusted by thousand of companies" />
-                <BtnYellow title="Learn More" url="learnMore.html" />
+                <BtnYellow title="Learn More" linkTo="/UnderConstruction" />
             </div>
 
 {/* Box-1 */}
