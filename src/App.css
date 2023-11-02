@@ -217,33 +217,7 @@ html, body
   background-color: #F0EFE9;
   position: relative;
 }
-.header #to-top-btn {
-  background-color: #F0EFE9;
-  border: none;
-  border-radius: 0.2rem;
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.5019607843);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  position: fixed;
-  bottom: 2%;
-  right: 2%;
-  z-index: 10;
-  opacity: 1;
-  transition: background-color ease-in-out 200ms, opacity ease-in-out 200ms;
-}
-.header #to-top-btn:hover {
-  background-color: #ababab;
-}
-.header #to-top-btn:active {
-  background-color: rgba(164, 164, 164, 0.4784313725);
-  transition: 20ms;
-}
-.header .hide-btn {
-  opacity: 0 !important;
-}
+
 @media (max-width: 992px) {
   .header {
     position: sticky;
@@ -256,53 +230,7 @@ html, body
   justify-content: space-between;
   padding: 0rem;
 }
-.header .container #menu {
-  display: block;
-  background-color: #F0EFE9;
-  color: #fff;
-  padding: 5px;
-  margin: 0;
-  position: fixed;
-  height: 100%;
-  border: solid 2px #DAD9D3;
-  text-align: center;
-  right: -100%;
-  transition: right 300ms;
-  box-shadow: 0 0 25px 0px rgba(25, 25, 25, 0.4823529412);
-}
-.header .container #menu.open {
-  right: 0;
-}
-.header .container .menu-border {
-  border: solid 1px #DAD9D3;
-}
-.header .container #menu ul {
-  list-style-type: none;
-  padding-inline: 0;
-  margin: 0px;
-  margin-top: -1rem;
-}
-.header .container a {
-  text-decoration: none;
-  color: #191919;
-}
-.header .container a:active {
-  color: rgba(25, 25, 25, 0.5137254902);
-}
-.header .container #menu li {
-  padding: 1rem;
-  border-bottom: solid 1px #DAD9D3;
-  transition: backgreound-color ease-in-out 100ms;
-  z-index: 1;
-}
-.header .container #menu li:hover {
-  background-color: #e4e4e4;
-  box-shadow: 0 0 12px 1px #e4e4e4;
-}
-.header .container #menu li:active {
-  background-color: rgba(255, 255, 255, 0.8862745098);
-  box-shadow: 0 0 12px 0px #ffffff;
-}
+
 .header .container .menu-bars {
   font-size: 30px;
   background-color: #F0EFE9;
@@ -312,6 +240,7 @@ html, body
 .header .container .menu-bars:active {
   color: #868686;
 }
+
 @media (min-width: 995px) {
   .header .container .menu-bars {
     display: none;

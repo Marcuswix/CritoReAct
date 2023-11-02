@@ -27,7 +27,7 @@ const ScrollToTopBtn = () => {
   return (
     <>
       <button id="btnScrollToTop" className={`btnScrollToTop ${position === 0 ? 'hide' : ''}`} onClick={handleButtonClick}>
-        <i className="fa-solid fa-arrow-up"></i>
+      <i class="fa-solid fa-angle-up"></i>
       </button>
     </>
   );

@@ -2,34 +2,46 @@ import React from 'react'
 import img_logo from '../../assets/images/Logo.svg';
 import { NavLink, Link } from 'react-router-dom';
 import BtnYellow from '../generics/BtnYellow';
+import { useState } from 'react'
+import Menu from './Menu'
 
 const Header = () => {
+
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  function handleMenu()
+  {
+    setMenuOpen(!menuOpen);
+  }
+
+  function menuIcon()
+  {
+    if (menuOpen)
+    {
+      document.getElementById('menu').classList.add('hide')
+      return (<i className="fa-solid fa-bars"></i>)
+    }
+    else
+    {
+      document.getElementById('menu').classList.remove('hide')
+      return (<i className="fa-solid fa-xmark"></i>)
+    }  
+  }
+
+
   return (
+    <>
+    <Menu />
     <header className="header">
-    
-      <button id="to-top-btn" className="hide-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
-        </svg>
-      </button>
       
       <div className="container">
           <Link to="/"><img src={img_logo} alt="Crito logotype" /></Link> 
-          <button id="toggle-menu" className="menu-bars" ><i className="fa-solid fa-bars"></i>
+          
+          <button id="toggle-menu" className="menu-bars"onClick={handleMenu}>
+          {menuIcon()}
           </button>
 
-        <div id="overlay">
-        </div>
-          <nav id="menu" className=''>
-            <ul>
-              <li><Link to="/"><img id="logo-menu-mobil" src={img_logo} alt="Crito logotype" /></Link></li>
-              <li id="option-home"><NavLink to="/" >Home</NavLink></li>
-              <li id="option-services"><NavLink to="/Services" >Services</NavLink></li>
-              <li id="option-news"><NavLink to="/News" >News</NavLink></li>
-              <li id="option-contact"><NavLink to="/contacts" >Contact</NavLink></li>
-              <li id="option-login"><NavLink to="/login">Login</NavLink></li>
-            </ul>
-          </nav>
-    
+      
           <div className="menu">
                 <div className="top-menu">
 
@@ -65,6 +77,7 @@ const Header = () => {
           </div>
         </div>
       </header>
+      </>
   )
 }
 
