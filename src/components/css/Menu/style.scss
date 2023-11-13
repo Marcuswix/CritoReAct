@@ -8,17 +8,17 @@
     position: fixed;
     height: 100%;
     right: 0;
-    top: 13%;
-    border: solid 2px #DAD9D3;
+    top: 16.5vh;
+    border-top: none;
     text-align: center;
-    box-shadow: 0 0 10px 0px rgba(25, 25, 25, 0.4823529412);
-    z-index: 2;
-    transition: top ease-in-out 200ms;
+    box-shadow: -1px 2px 2px 1px rgba(25, 25, 25, 0.4823529412);
+    z-index: 8;
+    transition: right ease-in-out 200ms;
   }
 
   .hide
   {
-    top: -100% !important;
+    right: -100% !important;
   }
 
 .menu-border {

@@ -25,13 +25,11 @@ const Contact = () => {
         if (!message)
         {
           setErrorMessage (<p>Message is empty. Please type a message.</p>)
-          document.getElementById("message").classList.add("error")
           isValid = false;
         }
         else
         {
           setErrorMessage('')
-          document.getElementById("message").classList.remove("error")
         }
         
         // Validate Name
@@ -39,13 +37,11 @@ const Contact = () => {
         if (!name || !nameRegEx.test(name))
         {
           setErrorName (<p>The name is invalid. Please type a valid name.</p>)
-          document.getElementById("name").classList.add("error")
           isValid = false;
         }
         else
         {
           setErrorName('')
-          document.getElementById("name").classList.remove("error")
         }
     
         // Validate Email
@@ -53,13 +49,11 @@ const Contact = () => {
         if (!emailRegEx.test(email))
         {
           setErrorEmail (<p>No vaild Email. Please type a vaild email</p>)
-          document.getElementById("email").classList.add("error")
           isValid = false;
         }
         else
         {
           setErrorEmail('')
-          document.getElementById("email").classList.remove("error")
         }
 
     if (isValid)
@@ -82,7 +76,6 @@ const Contact = () => {
     setTimeout(() => {
     messageSuccess.style.zIndex = -1;
     }, 3600)
-    // alert('your message has been sent successfully')
     console.log("Your message has been sent");
     } 
     else {

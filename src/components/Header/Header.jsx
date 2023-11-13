@@ -14,37 +14,23 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   }
 
-  function menuIcon()
-  {
-    if (menuOpen)
-    {
-      document.getElementById('menu').classList.add('hide')
-      return (<i className="fa-solid fa-bars"></i>)
-    }
-    else
-    {
-      document.getElementById('menu').classList.remove('hide')
-      return (<i className="fa-solid fa-xmark"></i>)
-    }  
-  }
-
-
   return (
     <>
-    <Menu />
+    <Menu menuOpen={menuOpen} />
     <header className="header">
       
       <div className="container">
           <Link to="/"><img src={img_logo} alt="Crito logotype" /></Link> 
           
           <button id="toggle-menu" className="menu-bars"onClick={handleMenu}>
-          {menuIcon()}
+          { menuOpen 
+            ? <i id="bars" className="fa-solid fa-xmark"></i> 
+            : <i id="xmark" className="fa-solid fa-bars"></i>
+          }
           </button>
 
-      
           <div className="menu">
                 <div className="top-menu">
-
                   <div className="contact-information">
                     <div className="box-content">
                       <i className="fa-solid fa-phone"></i>+46 (8) 121 470 50

@@ -10,7 +10,7 @@ const UnderConstruction = () => {
             <div className='imageContainer'>
                 <img id="ConstructionImage" src={img_UnderConstruction} alt="A picture of construction-site" />
             </div>
-            <div className="text">
+            <div className="textConstruction">
                 <h1>This Page is Under Construction...</h1>
             </div>
             <div className='ButtonNotFound'>
