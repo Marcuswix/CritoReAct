@@ -4,14 +4,15 @@
     color: #fff;
     padding: 5px;
     margin: 0;
+    padding-top: 8rem;
     width: 40vw;
     position: fixed;
     height: 100%;
     right: 0;
-    top: 16.5vh;
+    top: 0;
     border-top: none;
     text-align: center;
-    box-shadow: -1px 2px 2px 1px rgba(25, 25, 25, 0.4823529412);
+    border-left: solid 1px #DAD9D3;
     z-index: 8;
     transition: right ease-in-out 200ms;
   }
