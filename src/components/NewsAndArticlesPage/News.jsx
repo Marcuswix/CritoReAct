@@ -1,29 +1,82 @@
 import PageTitle from '../generics/PageTitle'
-import GetNews from '../Home/SectionElevenGetNews/GetNews'
-import Articles from './Articles'
-import img_Digitalization from '../../assets/images/image-article1.png'
-import img_ChatGPT from '../../assets/images/Image-article2.png'
-import img_CSS from '../../assets/images/Image-article3.png'
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import Article from './Articles';
 
 
 const News = () => {
     const [articles, setArticles] = useState([]);
-    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
         getArticles();
     }, []);
 
-    useEffect(() => {
-        console.log('is active');
-    }, [isActive]);
 
     async function getArticles() {
         const result = await fetch('https://win23-assignment.azurewebsites.net/api/articles');
         setArticles(await result.json());
     }
+
+    function gateDate(date) {
+
+        const getDate = date
+        const day = getDate.substring(8, 10)
+      
+        console.log(day)
+    
+        return day;
+      }
+    
+    
+    function getMonth(monthNumber) {
+      const getDate = monthNumber
+      const month = getDate.substring(5, 7)
+    
+      console.log(month)
+    
+      let monthText = '';
+      switch (month) {
+        case "1":
+          monthText = 'JAN';
+          break;
+        case "2":
+          monthText = 'FEB';
+          break;
+        case "3":
+          monthText = 'MAR';
+          break;
+          case "4":
+          monthText = 'APR';
+          break;
+        case "5":
+          monthText = 'MAY';
+          break;
+        case "6":
+          monthText = 'JUN';
+          break;
+          case "7":
+            monthText = 'JUL';
+            break;
+          case "8":
+            monthText = 'AUG';
+            break;
+          case "9":
+            monthText = 'SEP';
+            break;
+            case "10":
+            monthText = 'OKT';
+            break;
+          case "11":
+            monthText = 'NOV';
+            break;
+          case "12":
+            monthText = 'DEC';
+            break;
+        default:
+          monthText = 'Invalid Month';
+      }
+      return monthText;
+    } 
 
     return (
     <>
@@ -36,14 +89,7 @@ const News = () => {
                     <div className="container">
                         {articles.map((article) => (
                             <div className="content" key={article.id}>
-                                <div className='imageContainer'>
-                                    <img className="image-article" src={article.imageUrl} alt={article.category} />
-                                </div>
-                                    <p className="p-headline">{article.category}</p>
-                                    <Link key={article.id} to={`/Articles/${article.id}`}>
-                                        <h3>{article.title}</h3>
-                                    </Link>
-                                    <p>{article.content}</p>
+                                <Article date ={gateDate(article.published)} month={getMonth(article.published)} category={article.category} title={article.title} img={article.imageUrl} linkTo={`/Articles/${article.id}`} content={article.content} />     
                             </div>
                         ))}
                     </div>

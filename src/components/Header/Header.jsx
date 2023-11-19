@@ -4,6 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 import BtnYellow from '../generics/BtnYellow';
 import { useState } from 'react'
 import Menu from './Menu'
+import '../css/Menu/style.css'
 
 const Header = () => {
 

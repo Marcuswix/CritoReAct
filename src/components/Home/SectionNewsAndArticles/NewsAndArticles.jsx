@@ -27,18 +27,66 @@ const NewsAndArticles = () => {
     setArticles(await result.json())
   }
 
-  function cutText(text)
-  {
-    const maxLength = 10
-    if(text.length > maxLength)
-    {
-      return text.slice(0, maxLength)
-    }
-    else
-    {
-      return text;
-    }
+  function gateDate(date) {
+
+    const getDate = date
+    const day = getDate.substring(8, 10)
+  
+    console.log(day)
+
+    return day;
   }
+
+
+function getMonth(monthNumber) {
+  const getDate = monthNumber
+  const month = getDate.substring(5, 7)
+
+  console.log(month)
+
+  let monthText = '';
+  switch (month) {
+    case "1":
+      monthText = 'JAN';
+      break;
+    case "2":
+      monthText = 'FEB';
+      break;
+    case "3":
+      monthText = 'MAR';
+      break;
+      case "4":
+      monthText = 'APR';
+      break;
+    case "5":
+      monthText = 'MAY';
+      break;
+    case "6":
+      monthText = 'JUN';
+      break;
+      case "7":
+        monthText = 'JUL';
+        break;
+      case "8":
+        monthText = 'AUG';
+        break;
+      case "9":
+        monthText = 'SEP';
+        break;
+        case "10":
+        monthText = 'OKT';
+        break;
+      case "11":
+        monthText = 'NOV';
+        break;
+      case "12":
+        monthText = 'DEC';
+        break;
+    default:
+      monthText = 'Invalid Month';
+  }
+  return monthText;
+} 
 
   return (
   <>
@@ -55,7 +103,7 @@ const NewsAndArticles = () => {
     <div className="articleContainer">
       {articles.slice(0, 3).map(article => (
         <div className="article" key={article.id}>
-          <Article month={cutText(article.published)} category={article.category} title={article.title} img={article.imageUrl} linkTo={`/Articles/${article.id}`} content={article.content} />
+          <Article date ={gateDate(article.published)} month={getMonth(article.published)} category={article.category} title={article.title} img={article.imageUrl} linkTo={`/Articles/${article.id}`} content={article.content} />
         </div>
       ))}
     </div>
